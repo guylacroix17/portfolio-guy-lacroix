@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guy Lacroix — Portfolio</title>
+  <meta name="description" content="Portfolio de Guy Lacroix — affiches, flyers, textiles, signalétique.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-portfolio">
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-logo">GL</div>
+        <div class="brand-text">
+          <span class="brand-name">Guy Lacroix</span>
+          <span class="brand-role">Graphisme & Web</span>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Lettre</a>
+        <a href="cv.html" class="nav-link">CV</a>
+        <a href="portfolio.html" class="nav-link nav-link-active">Portfolio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap page-content">
+    <header class="portfolio-hero">
+      <div>
+        <h1>Portfolio — Print & Signalétique</h1>
+        <p class="portfolio-lead">
+          Sélection de travaux : affiches, flyers, textiles, covering, etc.
+          Une partie seulement de mes réalisations est présentée ici.
+        </p>
+      </div>
+    </header>
+
+    <section class="toolbar" aria-label="Filtres et recherche">
+      <div class="toolbar-inner">
+        <div class="toolbar-chips">
+          <button class="chip" data-filter="all" aria-pressed="true">Tout</button>
+          <button class="chip" data-filter="Affiche">Affiches</button>
+          <button class="chip" data-filter="Flyer">Flyers</button>
+          <button class="chip" data-filter="Textile">Textiles</button>
+          <button class="chip" data-filter="Covering">Covering</button>
+        </div>
+        <label class="search">
+          <span class="search-label">Rechercher</span>
+          <input id="search-input" type="search" placeholder="Titre, client…" />
+        </label>
+      </div>
+    </section>
+
+    <section class="grid" id="portfolio-grid" aria-live="polite">
+      <!-- Cartes générées en JavaScript -->
+    </section>
+  </main>
+
+  <dialog class="viewer" id="viewer">
+    <button class="viewer-close" type="button" aria-label="Fermer">×</button>
+    <div class="viewer-inner">
+      <figure class="viewer-image">
+        <img id="viewer-img" src="" alt="">
+      </figure>
+      <aside class="viewer-meta">
+        <h2 id="viewer-title"></h2>
+        <p id="viewer-sub"></p>
+        <div id="viewer-tags" class="tag-list-inline"></div>
+        <p id="viewer-desc" class="viewer-desc"></p>
+      </aside>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>© 2025 — Guy Lacroix</span>
+      <span>Portfolio — Print & Signalétique</span>
+    </div>
+  </footer>
+
+  <script>
+    const ITEMS = [
+// ------------------------------ Affiches
+      { id: 'affiche-01',
+        title: 'Affiche B7B',
+        client: 'B7B',
+        year: '2010',
+        categories: ['Affiche'],
+        thumb: 'assets/aff_b7b.jpg',
+        image: 'assets/aff_b7b.jpg',
+        tags: ['Affiche', 'Événement'],
+        desc: `
+        
+        <p><strong>Affiche pour un souper-supporter autour du pilote Barry Baltus.</p></strong> <br>
+        Travail sur la dynamique des images et la hiérarchie des informations (date, lieu, réservation).
+
+        `
+      },
+      { id: 'aff_sol_haiti',
+        title: 'Affiche Solidarité Haïti',
+        client: 'Privé',
+        year: '2010',
+        categories: ['Affiche'],
+        thumb: 'assets/aff_sol_haiti.jpg',
+        image: 'assets/aff_sol_haiti.jpg',
+        tags: ['Affiche', 'Solidarité'],
+        desc: `
+        <p><strong>Affiche réalisée en soutien aux victimes du séisme en Haïti.</strong><br>
+          Une création graphique jouant sur un contraste marqué entre le noir profond et un cercle lumineux centré sur le regard d’un enfant.</p>
+
+          <p>Les éclats visuels autour de la scène symbolisent à la fois la violence du tremblement de terre et la solidarité qui s’est diffusée comme une onde, de personne en personne.</p>
+
+          <p><em>Ce visuel a été décliné pour :</em></p>
+          <ul>
+            <li>l’affiche officielle ;</li>
+            <li>le site internet ;</li>
+            <li>l’invitation d’un week-end musical solidaire.</li>
+          </ul>
+
+          <p>Durant deux jours, des artistes et musiciens de la région ont joué bénévolement pour récolter des fonds reversés intégralement aux actions de soutien pour Haïti.</p>
+        `
+              
+      },
+      { id: 'aff_marche_2014',
+        title: 'Affiche Marche commémorative Ardennes 44',
+        client: 'Privé',
+        year: '2014',
+        categories: ['Affiche'],
+        thumb: 'assets/aff_marche_2014.jpg',
+        image: 'assets/aff_marche_2014.jpg',
+        tags: ['Affiche'],
+        desc: `
+        <p><strong>Affiche réalisée en collaboration avec le général américain James M. Gavin, figure emblématique de la 82<sup>e</sup> Division aéroportée américaine.</p></strong>
+        <p>Ce visuel rend hommage aux parachutistes de la 82nd Airborne engagés dans la bataille des Ardennes.</p>
+
+        <p>La création superpose la silhouette du général américain James M. Gavin sur une carte militaire d’époque retraçant les positions et mouvements historiques de la division. L’insigne de la 82nd Airborne ainsi que les écussons des régiments ayant combattu dans la région sont mis en avant&nbsp;:</p>
+
+        <ul>
+          <li>504 PIR</li>
+          <li>505 PIR</li>
+          <li>508 PIR</li>
+          <li>325 GIR</li>
+        </ul>
+
+        <p>Conçue pour une <em>marche du souvenir</em> organisée dans les Ardennes belges, l’affiche mêle hommage, mémoire et histoire en retraçant les pas des soldats qui se sont illustrés durant l’hiver 1944-45.</p>
+        
+        `
+      },
+      { id: 'aff_impr_toiles',
+        title: 'Affiche Impression toiles',
+        client: 'Akilon',
+        year: '2017',
+        categories: ['Affiche'],
+        thumb: 'assets/aff_impr_toiles.jpg',
+        image: 'assets/aff_impr_toiles.jpg',
+        tags: ['Affiche'],
+        desc: `
+        
+        <p>Photographie d’un ensemble d’impressions sur toile dédiées à plusieurs figures emblématiques de la bande dessinée : <strong>Marsupilami</strong>, <strong>Les Schtroumpfs</strong>, <strong>Johan et Pirlouit</strong>, <strong>Corto Maltese</strong> et bien d’autres œuvres cultes.</p>
+
+        <p>Chaque toile est réalisée avec une <strong>précision technique remarquable</strong> et un <strong>respect scrupuleux du profil couleur des éditeurs</strong>, afin de garantir une reproduction fidèle, éclatante et parfaitement conforme à l’esprit des illustrations originales.</p>
+
+        <p>Ces impressions haute qualité étaient destinées à des événements BD, expositions et ventes spécialisées, mettant en valeur un travail minutieux de préparation graphique, de calibrage et de finition sur toile.</p>
+
+        
+        `
+
+      },
+
+// ------------------------------ Flyers
+
+      { id: 'flyer-b7b-balade-moto',
+        title: 'Flyer B7B Balade moto',
+        client: 'B7B',
+        year: '2017',
+        categories: ['Flyer'],
+        thumb: 'assets/flyer-b7b-balade-moto.jpg',
+        image: 'assets/flyer-b7b-balade-moto.jpg',
+        tags: ['Flyer'],
+        desc: `
+        <p><strong>Flyer réalisé pour la “Balade Moto avec Barry Baltus”.</p></strong> 
+        <p>La composition mêle une photo d’action de motards à une typographie massive et contrastée, offrant un visuel dynamique et percutant. Conçu pour mettre en valeur les informations essentielles de l’événement organisé par l’asbl B7B.</p>
+        
+        `
+      },
+
+      { id: 'flyers-b7b-balade-auto',
+        title: 'Flyer B7B Balade auto',
+        client: 'B7B',
+        year: '2017',
+        categories: ['Flyer'],
+        thumb: 'assets/flyers-b7b-balade-auto.jpg',
+        image: 'assets/flyers-b7b-balade-auto.jpg',
+        tags: ['Flyer'],
+        desc: `
+        <p><strong>Flyer conçu pour la “Balade Old Timer avec Barry Baltus”.</p></strong>
+        <p>Le visuel met en valeur une Bugatti d’époque en gros plan, soulignant l’esthétique rétro et la dimension prestigieuse de l’événement. La typographie contrastée et la photo lumineuse de voitures anciennes créent un flyer dynamique et élégant, destiné à promouvoir une randonnée old-timer avec roadbook.</p>
+        
+        `
+      },
+
+      { id: 'flyers_ecrivain',
+        title: 'Flyer Écrivain',
+        client: 'Indépendant',
+        year: '2020',
+        categories: ['Flyer'],
+        thumb: 'assets/flyers_ecrivain.jpg',
+        image: 'assets/flyers_ecrivain.jpg',
+        tags: ['Flyer'],
+        desc: `
+        <p><strong>Flyer destiné à promouvoir l’Espace Écrivain Public de Fernelmont</p></strong>
+        <p>une initiative citoyenne offrant une aide aux habitants pour leurs démarches administratives et rédactionnelles.</p>
+        <p>La mise en page sobre et institutionnelle, renforcée par des symboles liés à l’écriture, valorise un service accessible à tous, soutenu par la Commune de Fernelmont et le Coworking local.</p>
+
+        `
+      },
+
+      // ------------------------------ Textiles
+
+      { id: 'ecusson-march2017-final',
+        title: 'Écusson Marche 2017',
+        client: 'Privé',
+        year: '2017',
+        categories: ['Textile'],
+        thumb: 'assets/ecusson-march2017-final.png',
+        image: 'assets/ecusson-march2017-final.png',
+        tags: ['Textile', 'Écusson'],
+        desc: `
+        <p><strong>Écusson commémoratif réalisé pour la marche historique sur les traces de la 82<sup>e</sup> Airborne Division.</strong></p>
+
+        <p>Conçu comme une récompense textile remise aux participants, cet écusson reprend les éléments visuels emblématiques de l’unité : l’insigne parachutiste “AA”, la silhouette d’un soldat américain et un char typique de la bataille des Ardennes. La composition circulaire reprend le style des patches militaires authentiques et inclut la mention “35 Years – 1983-2017”.</p>
+
+        <p>Cette réalisation prolonge l’identité graphique développée pour la fiche commémorative déjà décrite, en rendant hommage à la mémoire des combats menés dans les Ardennes durant l’hiver 1944-45.</p>
+
+        `
+
+      },
+      { id: 'écusson_2024_final',
+        title: 'Écusson 2024',
+        client: 'Privé',
+        year: '2024',
+        categories: ['Textile'],
+        thumb: 'assets/écusson_2024_final.png',
+        image: 'assets/écusson_2024_final.png',
+        tags: ['Texile', 'Écusson'],
+        desc: `
+        <p><strong>Écusson commémoratif réalisé pour la marche historique sur les traces de la 82<sup>e</sup> Airborne Division.</strong></p>
+
+        <p>Conçu comme une récompense textile remise aux participants, cet écusson reprend les éléments visuels emblématiques de l’unité : l’insigne parachutiste “AA”, <strong>la silhouette d’un soldat américain tiré d'une photo d'époque.</strong> La composition circulaire reprend le style des patches militaires authentiques et inclut la mention “40th Edition”.</p>
+
+        <p>Cette réalisation prolonge l’identité graphique développée pour la fiche commémorative déjà décrite, en rendant hommage à la mémoire des combats menés dans les Ardennes durant l’hiver 1944-45.</p>
+
+        `
+
+      },      
+      { id: 'T-shirt_2024_final_beige',
+        title: 'T-shirt 2024 beige',
+        client: 'Privé',
+        year: '2024',
+        categories: ['Textile'],
+        thumb: 'assets/T-shirt_2024_final_beige.jpg',
+        image: 'assets/T-shirt_2024_final_beige.jpg',
+        tags: ['Textile', 'T-shirt'],
+        desc: `
+        <p><strong>Visuel conçu comme déclinaison d’un écusson commémoratif destiné à la marche historique de la 82<sup>e</sup> Airborne Division.</strong></p>
+
+        <p>Cette composition, réalisée pour une impression sur t-shirt, associe plusieurs éléments graphiques issus de sources historiques authentiques. <strong>La silhouette du parachutiste provient d’une photographie célèbre prise durant la bataille des Ardennes en 1944</strong> ; elle a été vectorisée et retravaillée pour s’intégrer au visuel. L’arrière-plan reprend une carte tactique annotée, tandis que l’insigne “AA” de la 82nd Airborne renforce l’identification de l’unité.</p>
+
+        <p>Ce design prolonge l’identité graphique du projet commémoratif — écusson, patch et supports imprimés — en proposant une version adaptée aux contraintes de l’impression textile, tout en respectant la précision historique et l’esprit de la marche du souvenir.</p>
+
+        `
+
+      },
+      { id: 'T-Shirt_projet_01',
+        title: 'T-Shirt Randonnée en VTT',
+        client: 'Privé',
+        year: '2024',
+        categories: ['Textile'],
+        thumb: 'assets/T-Shirt_projet_01.png',
+        image: 'assets/T-Shirt_projet_01.png',
+        tags: ['Textile', 'T-shirt'],
+        desc: `
+        <p><strong>Visuel réalisé pour un t-shirt commémoratif destiné à un club local de VTT lors de son périple annuel en Europe.</strong></p>
+
+        <p>La composition associe une silhouette dynamique de cycliste à un décor illustratif représentatif de la région visitée. L’ensemble est conçu pour être lisible et efficace sur textile : formes vectorielles épurées, contours nets et palette adaptée à l’impression sur t-shirt.</p>
+
+        <p>Ce design fait partie d’une série réalisée pour les différentes destinations du club, en conservant une identité graphique commune tout en intégrant des éléments propres à chaque lieu exploré.</p>
+
+        `
+
+
+      },
+      { id: 'T-Shirt_SCHWARZWALD_01',
+        title: 'T-shirt Schwarzwald VTT',
+        client: 'Privé',
+        year: '2025',
+        categories: ['Textile'],
+        thumb: 'assets/T-Shirt_SCHWARZWALD_01.jpg',
+        image: 'assets/T-Shirt_SCHWARZWALD_01.jpg',
+        tags: ['Textile', 'T-shirt'],
+        desc: `
+        <p><strong>Visuel réalisé pour un t-shirt commémoratif destiné à un club local de VTT lors de son périple annuel en Europe.</strong></p>
+
+        <p>La composition associe une silhouette dynamique de cycliste à un décor illustratif représentatif de la région visitée. L’ensemble est conçu pour être lisible et efficace sur textile : formes vectorielles épurées, contours nets et palette adaptée à l’impression sur t-shirt.</p>
+
+        <p>Ce design fait partie d’une série réalisée pour les différentes destinations du club, en conservant une identité graphique commune tout en intégrant des éléments propres à chaque lieu exploré.</p>
+
+        `
+
+      },
+
+      // ------------------------------ Covering
+
+      { id: 'cover-01',
+        title: 'Cover Golf Ya-too',
+        client: 'Ya-too',
+        year: '2018',
+        categories: ['Covering'],
+        thumb: 'assets/cover_golf_yatoo.jpg',
+        image: 'assets/cover_golf_yatoo.jpg',
+        tags: ['Covering'],
+        desc: `
+        <p><strong>Cover partiel réalisé pour une société spécialisée dans la vente en ligne de produits dérivés BD, cinéma et miniatures.</strong></p>
+
+        <p>La personnalisation reprend une illustration inspirée de l’univers bande dessinée, intégrée sur le flanc du véhicule avec un placement optimisé pour la visibilité. Le visuel a été préparé pour un rendu propre en impression vinyle, avec des couleurs éclatantes et des contours nets adaptés à la découpe.</p>
+
+        <p>Ce design renforce l’identité visuelle de la marque sur la route, en offrant un support promotionnel original et immédiatement reconnaissable.</p>
+
+        `
+
+      },      
+
+      { id: 'cover-02',
+        title: 'Cover camionette Ya-too',
+        client: 'Ya-too',
+        year: '2018',
+        categories: ['Covering'],
+        thumb: 'assets/cover_ya-too.jpg',
+        image: 'assets/cover_ya-too.jpg',
+        tags: ['Covering'],
+        desc: `
+        <p><strong>Cover complet réalisé pour une société spécialisée dans la vente en ligne de produits dérivés BD, cinéma et miniatures.</strong></p>
+
+        <p>Cette personnalisation met en scène le personnage du Marsupilami dont la queue traverse l’ensemble du véhicule, créant une continuité graphique dynamique entre l’arrière, les côtés et le capot. Le design intègre également d’autres personnages emblématiques de la bande dessinée, renforçant l’identité ludique et reconnaissable de la marque.</p>
+
+        <p>Le visuel est conçu pour une impression vinyle couvrante : tracé vectoriel propre, couleurs stables et ajustement précis aux formes du véhicule afin de garantir une pose uniforme sur toute la carrosserie.</p>
+
+        `
+
+      }, 
+
+    ];
+
+    const grid = document.getElementById('portfolio-grid');
+    const chips = Array.from(document.querySelectorAll('.chip'));
+    const q = document.getElementById('search-input');
+    const viewer = document.getElementById('viewer');
+    const vImg = document.getElementById('viewer-img');
+    const vTitle = document.getElementById('viewer-title');
+    const vSub = document.getElementById('viewer-sub');
+    const vTags = document.getElementById('viewer-tags');
+    const vDesc = document.getElementById('viewer-desc');
+    const vClose = document.querySelector('.viewer-close');
+
+    let currentFilter = 'all';
+
+    function currentList() {
+      const term = q.value.trim().toLowerCase();
+      return ITEMS.filter(item => {
+        const matchFilter = currentFilter === 'all'
+          || (item.categories || []).includes(currentFilter);
+        const inText = (item.title + ' ' + (item.client || '')).toLowerCase();
+        const matchSearch = !term || inText.includes(term);
+        return matchFilter && matchSearch;
+      });
+    }
+
+    function render(list) {
+      grid.innerHTML = '';
+      list.forEach(item => {
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.innerHTML = `
+          <button class="card-inner" type="button">
+            <figure class="card-figure">
+              <img src="${item.thumb}" alt="${item.title}">
+            </figure>
+            <div class="card-meta">
+              <h2>${item.title}</h2>
+              <p>${item.client || ''}${item.client && item.year ? ' · ' : ''}${item.year || ''}</p>
+              <div class="tag-list-inline">
+                ${(item.categories || []).map(c => `<span class="tag">${c}</span>`).join('')}
+              </div>
+            </div>
+          </button>
+        `;
+        card.querySelector('button').addEventListener('click', () => openViewer(item));
+        grid.appendChild(card);
+      });
+    }
+
+    function openViewer(item) {
+      vImg.src = item.image;
+      vImg.alt = item.title;
+      vTitle.textContent = item.title;
+      vSub.textContent = `${item.client || ''}${item.client && item.year ? ' · ' : ''}${item.year || ''}`;
+      vTags.innerHTML = (item.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
+
+      // ➜ nouvelle partie description
+      if (item.desc) {
+        vDesc.innerHTML = item.desc;
+        vDesc.style.display = 'block';
+      } else {
+        vDesc.textContent = '';
+        vDesc.style.display = 'none';
+      }
+
+      viewer.showModal();
+    }
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.setAttribute('aria-pressed', 'false'));
+        chip.setAttribute('aria-pressed', 'true');
+        currentFilter = chip.dataset.filter;
+        render(currentList());
+      });
+    });
+
+    q.addEventListener('input', () => {
+      render(currentList());
+    });
+
+    vClose.addEventListener('click', () => viewer.close());
+    viewer.addEventListener('click', e => {
+      if (e.target === viewer) viewer.close();
+    });
+    viewer.addEventListener('keydown', e => {
+      if (e.key === 'Escape') viewer.close();
+    });
+
+    render(currentList());
+  </script>
+</body>
+</html>
