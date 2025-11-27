@@ -15,4 +15,4 @@ L’ensemble est conçu comme un site statique léger, optimisé pour une lectur
 
 Le site est publié via **GitHub Pages** à l’adresse suivante :
 
-👉 *(à compléter une fois l’URL connue)*.
+👉 https://guylacroix17.github.io/portfolio-guy-lacroix/
